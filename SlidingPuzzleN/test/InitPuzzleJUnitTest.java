@@ -9,7 +9,13 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import outil.Outils;
+
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import slidingpuzzlen.SlidingPuzzle;
 
 /**
@@ -47,21 +53,27 @@ public class InitPuzzleJUnitTest {
         boolean test;
         
         SlidingPuzzle puzzle = new SlidingPuzzle(3);
-        puzzle.affichage();
+        //puzzle.affichage();
         
         test = puzzle.estTrie();
         
         System.out.println(test);
         
         puzzle.initTrie();
-        puzzle.affichage();
-        
-        
+        //puzzle.affichage();        
         
         test = puzzle.estTrie();
         
         System.out.println(test);
         
+        puzzle = new SlidingPuzzle(3);
+        System.out.println("Affichage de base : ");
+        puzzle.affichage();
+        System.out.println("visite des transformations : ");
+        ArrayList<SlidingPuzzle> puzzles = Outils.transformations(puzzle);
+        for (SlidingPuzzle p : puzzles) {
+        	p.affichage();
+        }
     }
 
     // TODO add test methods here.

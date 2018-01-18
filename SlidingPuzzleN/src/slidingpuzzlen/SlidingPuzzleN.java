@@ -69,42 +69,4 @@ public class SlidingPuzzleN {
         
     }*/
     
-    public ArrayList<SlidingPuzzle> transformations(SlidingPuzzle _puzzle){
-        
-        /*
-        boolean coin = ((_puzzle.getCoordonnees()[0] == 0 && _puzzle.getCoordonnees()[1] == 0 ) || 
-                        (_puzzle.getCoordonnees()[0] == 0 && _puzzle.getCoordonnees()[1] == _puzzle.getDimension() -1) || 
-                        (_puzzle.getCoordonnees()[0] == _puzzle.getDimension()-1 && _puzzle.getCoordonnees()[1] == 0) || 
-                        (_puzzle.getCoordonnees()[0] == _puzzle.getDimension() - 1 && _puzzle.getCoordonnees()[1] == _puzzle.getDimension() - 1) );
-        
-        boolean bord = ((_puzzle.getCoordonnees()[0] == 0 && _puzzle.getCoordonnees()[1] != 0 && _puzzle.getCoordonnees()[1] != _puzzle.getDimension() - 1 ) ||
-                        (_puzzle.getCoordonnees()[0] == _puzzle.getDimension() - 1 && _puzzle.getCoordonnees()[1] != 0 && _puzzle.getCoordonnees()[1] != _puzzle.getDimension() - 1 ) ||
-                        (_puzzle.getCoordonnees()[1] == 0 && _puzzle.getCoordonnees()[0] != 0 && _puzzle.getCoordonnees()[0] != _puzzle.getDimension() - 1 ) ||
-                        (_puzzle.getCoordonnees()[1] == _puzzle.getDimension() - 1 && _puzzle.getCoordonnees()[0] != 0 && _puzzle.getCoordonnees()[0] != _puzzle.getDimension() - 1 ) );
-        
-        if ( coin == true ){
-
-        */
-        
-        ArrayList<SlidingPuzzle> transformations = new ArrayList<>();
-        
-        SlidingPuzzle e = _puzzle;
-        int valeur;
-        int copyPuzzle[][] = new int[e.getDimension()][e.getDimension()];
-        for(int i = 0 ; i < 4 ; i++){
-            
-            if( e.getCoordonnees()[1] - 1 >= 0 ){
-                copyPuzzle = e.getPuzzle();
-                valeur = e.getPuzzle()[e.getCoordonnees()[0]][e.getCoordonnees()[1]-1];
-                copyPuzzle[e.getCoordonnees()[0]][e.getCoordonnees()[1]-1] = 0;
-                copyPuzzle[e.getCoordonnees()[0]][e.getCoordonnees()[1]] = valeur;
-                e.setPuzzle(copyPuzzle);
-                
-                
-            } 
-            
-        }
-        
-    }
-    
 }
